@@ -1,47 +1,101 @@
+/* General Reset */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #FFFFFF;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f9f9f9;
   margin: 0;
   padding: 0;
+  color: #333;
 }
 
+/* Header */
 header {
-  background-color: #4E342E; /* Dark Brown */
+  background-color: #4E342E;
   color: white;
   text-align: center;
   padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
 }
 
-.logo {
-  height: 60px;
+header .logo {
+  height: 50px;
+  margin-right: 10px;
   vertical-align: middle;
 }
 
-.container {
-  width: 90%;
-  margin: auto;
-  padding: 1rem;
+header h1 {
+  margin: 0.5rem 0;
+  font-size: 1.8rem;
 }
 
+/* Navigation */
+nav {
+  margin-top: 1rem;
+}
+
+nav button {
+  background: #6D4C41;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+nav button.active {
+  background: #D7CCC8;
+  color: #4E342E;
+}
+
+nav button:hover {
+  background: #8D6E63;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+/* Form */
 .form-box {
-  background: #D7CCC8; /* Light Brown */
-  padding: 1rem;
-  margin-bottom: 2rem;
+  background: white;
+  padding: 1.5rem;
   border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.form-box label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
 }
 
 .form-box input, .form-box textarea, .form-box select {
   width: 100%;
-  padding: 0.5rem;
-  margin-top: 5px;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
+.primary-btn {
+  margin-top: 1.5rem;
+  background: #4E342E;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.primary-btn:hover {
+  background: #6D4C41;
+}
+
+/* Items */
 .items {
   display: flex;
   flex-wrap: wrap;
@@ -49,21 +103,28 @@ header {
 }
 
 .card {
-  background: #fff;
-  border: 1px solid #D7CCC8;
+  background: white;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  width: 220px;
-  padding: 0.5rem;
-  text-align: left;
+  width: 250px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .card img {
   width: 100%;
-  height: 120px;
+  height: 140px;
   object-fit: cover;
   border-radius: 4px;
+  margin-bottom: 0.5rem;
 }
 
+.card h3 {
+  margin: 0.3rem 0;
+  font-size: 1.1rem;
+}
+
+/* Footer */
 footer {
   background-color: #4E342E;
   color: white;

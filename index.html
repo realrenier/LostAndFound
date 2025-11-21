@@ -9,52 +9,58 @@
   <header>
     <img src="logo.png" alt="School Logo" class="logo">
     <h1>You Lost It, We've Found It</h1>
+    <nav>
+      <button onclick="showTab('report')" id="btn-report">Report</button>
+      <button onclick="showTab('lost')" id="btn-lost">Lost</button>
+      <button onclick="showTab('found')" id="btn-found">Found</button>
+    </nav>
   </header>
 
-  <div class="container">
-    <!-- Upload Form -->
-    <div class="form-box">
+  <main class="container">
+    <!-- Report Form -->
+    <section id="report" class="tab">
       <h2>Report Item</h2>
-      <form id="itemForm">
-        <label>Type:</label>
+      <form id="itemForm" class="form-box">
+        <label>Type</label>
         <select id="type">
           <option value="lost">Lost</option>
           <option value="found">Found</option>
-        </select><br><br>
+        </select>
 
-        <label>Item Name:</label>
-        <input type="text" id="name" required><br><br>
+        <label>Item Name</label>
+        <input type="text" id="name" required>
 
-        <label>Description:</label>
-        <textarea id="description" rows="3" required></textarea><br><br>
+        <label>Description</label>
+        <textarea id="description" rows="3" required></textarea>
 
-        <label>Date:</label>
-        <input type="date" id="date" required><br><br>
+        <label>Date</label>
+        <input type="date" id="date" required>
 
-        <label>Place:</label>
-        <input type="text" id="place" required><br><br>
+        <label>Place</label>
+        <input type="text" id="place" required>
 
-        <label>Contact:</label>
-        <input type="text" id="contact" required><br><br>
+        <label>Contact</label>
+        <input type="text" id="contact" required>
 
-        <label>Image (optional):</label>
-        <input type="file" id="image" accept="image/*"><br><br>
+        <label>Image (optional)</label>
+        <input type="file" id="image" accept="image/*">
 
-        <button type="submit">Upload</button>
+        <button type="submit" class="primary-btn">Upload</button>
       </form>
-    </div>
+    </section>
 
-    <!-- Dropdown Filter -->
-    <label>Show:</label>
-    <select id="filter">
-      <option value="all">All Items</option>
-      <option value="lost">Lost</option>
-      <option value="found">Found</option>
-    </select>
+    <!-- Lost Items -->
+    <section id="lost" class="tab" style="display:none;">
+      <h2>Lost Items</h2>
+      <div class="items" id="lostItems"></div>
+    </section>
 
-    <!-- Items Display -->
-    <div class="items" id="items"></div>
-  </div>
+    <!-- Found Items -->
+    <section id="found" class="tab" style="display:none;">
+      <h2>Found Items</h2>
+      <div class="items" id="foundItems"></div>
+    </section>
+  </main>
 
   <footer>
     <p>© 2025 Renier Van Rooi. All rights reserved.</p>

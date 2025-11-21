@@ -1,8 +1,8 @@
 const form = document.getElementById('itemForm');
-const itemsDiv = document.getElementById('items');
-const filter = document.getElementById('filter');
+const lostDiv = document.getElementById('lostItems');
+const foundDiv = document.getElementById('foundItems');
+const navButtons = document.querySelectorAll('nav button');
 
-// Load items from localStorage or start empty
 let items = JSON.parse(localStorage.getItem("items")) || [];
 
 form.addEventListener('submit', e => {
@@ -34,27 +34,6 @@ form.addEventListener('submit', e => {
   form.reset();
 });
 
-filter.addEventListener('change', displayItems);
-
-function displayItems() {
-  itemsDiv.innerHTML = '';
-  const selected = filter.value;
-  items.filter(i => selected === 'all' || i.type === selected)
-       .forEach(i => {
-         const card = document.createElement('div');
-         card.className = 'card';
-         card.innerHTML = `
-           ${i.image ? `<img src="${i.image}">` : `<div style="height:120px;background:#eee;display:flex;align-items:center;justify-content:center;">No Image</div>`}
-           <h3>${i.name}</h3>
-           <p><strong>Type:</strong> ${i.type.toUpperCase()}</p>
-           <p><strong>Description:</strong> ${i.description}</p>
-           <p><strong>Date:</strong> ${i.date}</p>
-           <p><strong>Place:</strong> ${i.place}</p>
-           <p><strong>Contact:</strong> ${i.contact}</p>
-         `;
-         itemsDiv.appendChild(card);
-       });
-}
-
-// Load items on page start
-displayItems();
+function showTab(tabId) {
+  document.querySelectorAll('.tab').forEach(tab => tab.style.display = 'none');
+  document.getElementById(tabId).style.display
